@@ -111,6 +111,7 @@ namespace storeLogger
             {
                 dropDown.Items.Add(name);
             }
+            
 
         }
 
@@ -144,7 +145,26 @@ namespace storeLogger
             } catch(Exception ex)
             {
                 Debug.WriteLine(ex);
-            }           return data;
+            }
+            return data;
+        }
+        public int rowMinMax()
+        {
+            int rowCounter = 0;
+            Excel.Application oXL = new Excel.Application();
+            Excel._Workbook oWB = oXL.Workbooks.Open(excelDocument);
+            Excel._Worksheet oSheet = null;
+            oSheet = String.IsNullOrEmpty(dropDown.Text) ? (Excel._Worksheet)oWB.ActiveSheet : (Excel._Worksheet)oWB.Worksheets[dropDown.Text];
+            Excel.Range last = oSheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell, Type.Missing);
+            Excel.Range range = oSheet.get_Range("A1", last);
+            try
+            {
+                rowCounter = last.Row;
+            } catch (Exception ex)
+            {
+                Debug.Write(ex);
+            }
+            return rowCounter;
         }
         public List<string> pullWorksheets()
         {
@@ -165,6 +185,12 @@ namespace storeLogger
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void dropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            rowCount.Maximum = rowMinMax();
+            rowCount.Minimum = 1;
         }
     }
 }

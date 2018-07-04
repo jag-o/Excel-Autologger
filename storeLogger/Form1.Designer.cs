@@ -313,6 +313,7 @@
             this.dropDown.Name = "dropDown";
             this.dropDown.Size = new System.Drawing.Size(121, 21);
             this.dropDown.TabIndex = 25;
+            this.dropDown.SelectedIndexChanged += new System.EventHandler(this.dropDown_SelectedIndexChanged);
             // 
             // label2
             // 
