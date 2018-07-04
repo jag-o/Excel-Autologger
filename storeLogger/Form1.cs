@@ -20,7 +20,6 @@ namespace storeLogger
             Excel.Application oXL = null;
             Excel._Workbook oWB = null;
             Excel._Worksheet oSheet = null;
-
             try
             {
                 // This try block opens up your specified document in the File Chooser,
@@ -106,11 +105,21 @@ namespace storeLogger
             openFileDialog1.ShowDialog();
             excelDocument = openFileDialog1.FileName;
             label1.Text = "Current document open: " + excelDocument;
-            List<string> list = PullWorksheets();
-            dropDown.Items.Clear();
-            foreach (string name in list)
+            // Logic is used to fix a bug where the Excel document would still
+            // try to be used, but caused a COM exception at runtime.
+            if (excelDocument == null)
             {
-                dropDown.Items.Add(name);
+                MessageBox.Show("Please choose a vaild .XLSX file!");
+                label1.Text = "Current document open: ";
+            }
+            else
+            {
+                List<string> list = PullWorksheets();
+                dropDown.Items.Clear();
+                foreach (string name in list)
+                {
+                    dropDown.Items.Add(name);
+                }
             }
         }
         private void RowCount_ValueChanged(object sender, EventArgs e)
@@ -136,17 +145,19 @@ namespace storeLogger
             Excel.Application oXL = null;
             Excel._Workbook oWB = null;
             Excel._Worksheet oSheet = null;
-            oXL = new Excel.Application();
-            oWB = oXL.Workbooks.Open(excelDocument);
-            oSheet = String.IsNullOrEmpty(dropDown.Text) ? (Excel._Worksheet)oWB.ActiveSheet : (Excel._Worksheet)oWB.Worksheets[dropDown.Text];
             string data = null;
             try
             {
+                // Why in 0.0.12, I forgot to encase this in a try/catch, is beyond me.
+                oXL = new Excel.Application();
+                oWB = oXL.Workbooks.Open(excelDocument);
+                oSheet = String.IsNullOrEmpty(dropDown.Text) ? (Excel._Worksheet)oWB.ActiveSheet : (Excel._Worksheet)oWB.Worksheets[dropDown.Text];
                 data = oSheet.Cells[row, col].Value.ToString();
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(ex);
+                MessageBox.Show("Please open a valid .xlsx document!");
             }
             finally
             {
@@ -162,19 +173,23 @@ namespace storeLogger
             // New method written so the end user doesn't go over the amount of cells already used.
             // However, this may be scratched as it could be that the end user wishes to fill new boxes.
             int rowCounter = 0;
-            Excel.Application oXL = new Excel.Application();
-            Excel._Workbook oWB = oXL.Workbooks.Open(excelDocument);
+            Excel.Application oXL = null;
+            Excel._Workbook oWB = null;
             Excel._Worksheet oSheet = null;
-            oSheet = String.IsNullOrEmpty(dropDown.Text) ? (Excel._Worksheet)oWB.ActiveSheet : (Excel._Worksheet)oWB.Worksheets[dropDown.Text];
-            Excel.Range last = oSheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell, Type.Missing); // Finds the last used cell.
-            Excel.Range range = oSheet.get_Range("A1", last);
             try
             {
+                // Again, unlike 0.0.12, this should always be in a try/catch.
+                oXL = new Excel.Application();
+                oWB = oXL.Workbooks.Open(excelDocument);
+                oSheet = String.IsNullOrEmpty(dropDown.Text) ? (Excel._Worksheet)oWB.ActiveSheet : (Excel._Worksheet)oWB.Worksheets[dropDown.Text];
+                Excel.Range last = oSheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell, Type.Missing); // Finds the last used cell.
+                Excel.Range range = oSheet.get_Range("A1", last);
                 rowCounter = last.Row;
             }
             catch (Exception ex)
             {
                 Debug.Write(ex);
+                MessageBox.Show("Please open a valid .xlsx document!");
             }
             finally
             {
@@ -189,21 +204,43 @@ namespace storeLogger
         {
             // This method pulls the worksheet names from the file and stores it
             // in a List<string> datatype, using a foreach loop.
-            List<string> str = new List<string>(); 
+            List<string> str = new List<string>();
             Excel.Application oXL = null;
             Excel._Workbook oWB = null;
             Excel.Sheets oSH = null;
-            oXL = new Excel.Application();
-            oWB = oXL.Workbooks.Open(excelDocument);
-            oSH = oWB.Worksheets;
-            // This foreach loop determines each name in the specified workbook, oWB.
-            foreach (Excel.Worksheet worksheet in oWB.Worksheets)
-            { 
-                str.Add(worksheet.Name);
-            }
-            if (oWB != null)
+            try
             {
-                oWB.Close(); // Close down document, to avoid deadlock or R/W issues.
+                // Put into try/catch to avoid COM exceptions.
+                oXL = new Excel.Application();
+                oWB = oXL.Workbooks.Open(excelDocument);
+                oSH = oWB.Worksheets;
+            }
+            catch (Exception ex)
+            {
+                label1.Text = "Current document open: ";
+                Debug.WriteLine(ex);
+                MessageBox.Show("Please open a valid .xlsx document!");
+            }
+            // This foreach loop determines each name in the specified workbook, oWB.
+            try
+            {
+                // This needs to be in a try/catch to avoid errors if the above exception
+                // is caught.
+                foreach (Excel.Worksheet worksheet in oWB.Worksheets)
+                {
+                    str.Add(worksheet.Name);
+                }
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
+            finally
+            {
+                if (oWB != null)
+                {
+                    oWB.Close(); // Close down document, to avoid deadlock or R/W issues.
+                }
             }
             return str; // Return the List<> of worksheets.
         }
