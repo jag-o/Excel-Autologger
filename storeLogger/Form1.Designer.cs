@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.submitButton = new System.Windows.Forms.Button();
             this.Element = new System.Windows.Forms.TextBox();
             this.label = new System.Windows.Forms.Label();
             this.wwd = new System.Windows.Forms.Label();
@@ -51,22 +51,22 @@
             this.rowCount = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.button2 = new System.Windows.Forms.Button();
+            this.openButton = new System.Windows.Forms.Button();
             this.dropDown = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.rowCount)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // submitButton
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(401, 281);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Submit Changes";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.submitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.submitButton.Location = new System.Drawing.Point(401, 281);
+            this.submitButton.Name = "submitButton";
+            this.submitButton.Size = new System.Drawing.Size(122, 23);
+            this.submitButton.TabIndex = 0;
+            this.submitButton.Text = "Submit Changes";
+            this.submitButton.UseVisualStyleBackColor = true;
+            this.submitButton.Click += new System.EventHandler(this.Button1_Click);
             // 
             // Element
             // 
@@ -279,7 +279,7 @@
             0,
             0,
             0});
-            this.rowCount.ValueChanged += new System.EventHandler(this.rowCount_ValueChanged);
+            this.rowCount.ValueChanged += new System.EventHandler(this.RowCount_ValueChanged);
             // 
             // label1
             // 
@@ -294,17 +294,16 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.Filter = "Excel Documents|*.xlsx";
-            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
-            // button2
+            // openButton
             // 
-            this.button2.Location = new System.Drawing.Point(273, 281);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(122, 23);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "Open Excel XML";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.openButton.Location = new System.Drawing.Point(273, 281);
+            this.openButton.Name = "openButton";
+            this.openButton.Size = new System.Drawing.Size(122, 23);
+            this.openButton.TabIndex = 22;
+            this.openButton.Text = "Open Excel XML";
+            this.openButton.UseVisualStyleBackColor = true;
+            this.openButton.Click += new System.EventHandler(this.Button2_Click);
             // 
             // dropDown
             // 
@@ -313,7 +312,7 @@
             this.dropDown.Name = "dropDown";
             this.dropDown.Size = new System.Drawing.Size(121, 21);
             this.dropDown.TabIndex = 25;
-            this.dropDown.SelectedIndexChanged += new System.EventHandler(this.dropDown_SelectedIndexChanged);
+            this.dropDown.SelectedIndexChanged += new System.EventHandler(this.DropDown_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -331,7 +330,7 @@
             this.ClientSize = new System.Drawing.Size(535, 313);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dropDown);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.openButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.rowCount);
             this.Controls.Add(this.label10);
@@ -353,10 +352,9 @@
             this.Controls.Add(this.wwd);
             this.Controls.Add(this.label);
             this.Controls.Add(this.Element);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.submitButton);
             this.Name = "Form1";
             this.Text = "Excel Filler";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.rowCount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -365,7 +363,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button submitButton;
         private System.Windows.Forms.TextBox Element;
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.Label wwd;
@@ -388,7 +386,7 @@
         private System.Windows.Forms.NumericUpDown rowCount;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button openButton;
         private System.Windows.Forms.ComboBox dropDown;
         private System.Windows.Forms.Label label2;
     }
