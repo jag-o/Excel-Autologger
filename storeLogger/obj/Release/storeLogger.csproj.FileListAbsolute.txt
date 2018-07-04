@@ -1,0 +1,14 @@
+C:\Users\punters\source\repos\storeLogger\storeLogger\bin\Release\storeLogger.exe.config
+C:\Users\punters\source\repos\storeLogger\storeLogger\bin\Release\storeLogger.exe
+C:\Users\punters\source\repos\storeLogger\storeLogger\bin\Release\storeLogger.pdb
+C:\Users\punters\source\repos\storeLogger\storeLogger\bin\Release\DocumentFormat.OpenXml.dll
+C:\Users\punters\source\repos\storeLogger\storeLogger\bin\Release\DocumentFormat.OpenXml.xml
+C:\Users\punters\source\repos\storeLogger\storeLogger\obj\Release\storeLogger.csproj.ResolveComReference.cache
+C:\Users\punters\source\repos\storeLogger\storeLogger\obj\Release\storeLogger.Form1.resources
+C:\Users\punters\source\repos\storeLogger\storeLogger\obj\Release\storeLogger.Properties.Resources.resources
+C:\Users\punters\source\repos\storeLogger\storeLogger\obj\Release\storeLogger.csproj.GenerateResource.cache
+C:\Users\punters\source\repos\storeLogger\storeLogger\obj\Release\storeLogger.csproj.CoreCompileInputs.cache
+C:\Users\punters\source\repos\storeLogger\storeLogger\obj\Release\storeLogger.csproj.CopyComplete
+C:\Users\punters\source\repos\storeLogger\storeLogger\obj\Release\storeLogger.exe
+C:\Users\punters\source\repos\storeLogger\storeLogger\obj\Release\storeLogger.pdb
+C:\Users\punters\source\repos\storeLogger\storeLogger\obj\Release\storeLogger.csprojAssemblyReference.cache
