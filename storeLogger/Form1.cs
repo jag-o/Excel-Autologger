@@ -27,7 +27,7 @@ namespace storeLogger
             {
                 oXL = new Excel.Application();
                 oWB = oXL.Workbooks.Open(excelDocument);
-                oSheet = String.IsNullOrEmpty(sheetBox.Text) ? (Excel._Worksheet)oWB.ActiveSheet : (Excel._Worksheet)oWB.Worksheets[sheetBox.Text];
+                oSheet = String.IsNullOrEmpty(dropDown.Text) ? (Excel._Worksheet)oWB.ActiveSheet : (Excel._Worksheet)oWB.Worksheets[dropDown.Text];
 
                 oSheet.Cells[row, col] = data;
                 oWB.Save();
@@ -107,7 +107,10 @@ namespace storeLogger
             excelDocument = openFileDialog1.FileName;
             label1.Text = label1.Text + " " + excelDocument;
             List<string> list = pullWorksheets();
-            string sheets = String.Join("\n ", list.ToArray());
+            foreach (string name in list)
+            {
+                dropDown.Items.Add(name);
+            }
 
         }
 
@@ -132,7 +135,7 @@ namespace storeLogger
             Excel._Worksheet oSheet = null;
             oXL = new Excel.Application();
             oWB = oXL.Workbooks.Open(excelDocument);
-            oSheet = String.IsNullOrEmpty(sheetBox.Text) ? (Excel._Worksheet)oWB.ActiveSheet : (Excel._Worksheet)oWB.Worksheets[sheetBox.Text];
+            oSheet = String.IsNullOrEmpty(dropDown.Text) ? (Excel._Worksheet)oWB.ActiveSheet : (Excel._Worksheet)oWB.Worksheets[dropDown.Text];
             string data = null;
             try
             {
