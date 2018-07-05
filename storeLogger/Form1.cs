@@ -1,6 +1,8 @@
 ﻿using Excel = Microsoft.Office.Interop.Excel;
+using Microsoft.CSharp;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Diagnostics;
 using System.Windows.Forms;
 
@@ -9,9 +11,11 @@ namespace storeLogger
     public partial class Form1 : Form
     {
         string excelDocument; // Global string needed for document.
+        public bool autoFill; // Global logic needed for autofilling of blanks in application.
+        Form1 fm;
         public Form1() // Initilises the UI.
         {
-            InitializeComponent(); 
+            InitializeComponent();
         }
         private void UpdateExcel(int row, int col, string data)
         {
@@ -44,56 +48,27 @@ namespace storeLogger
         }
         private void Button1_Click(object sender, EventArgs e)
         {
-            // A huge block of if statements. This is to be improved in the future.
-            // If the cell is empty, set it to undefined.
-            // Might be improved in the future with user control over this feature.
-            if (Element.Text == "")
+            // Compacted down from if statements in 0.2.0-beta.
+            // This new method creats an array from the boxes, to use a for-loop instead.
+            string[] boxArr = new string[9] { s1.Text, s2.Text, s3.Text, s4.Text, s5.Text, s6.Text, s7.Text, s8.Text, s9.Text };
+            if (!checkBox1.Checked)
             {
-                Element.Text = "Undefined";
+                // Do nothing
             }
-            if (Quantity.Text == "")
+            else if (checkBox1.Checked)
             {
-                Quantity.Text = "Undefined";
+                for (int i = 0; i < 9; i++)
+                {
+                    if (boxArr[i] == "")
+                    {
+                        boxArr[i] = "Undefined";
+                    }
+                }
             }
-            if (Hazcard.Text == "")
+            for (int i = 0; i < 9; i++)
             {
-                Hazcard.Text = "Undefined";
+                UpdateExcel((Convert.ToInt32(rowCount.Value)), i, boxArr[i]);
             }
-            if (Location.Text == "")
-            {
-                Location.Text = "Undefined";
-            }
-            if (boughtIn.Text == "")
-            {
-                boughtIn.Text = "Undefined";
-            }
-            if (usedBy.Text == "")
-            {
-                usedBy.Text = "Undefined";
-            }
-            if (Stock.Text == "")
-            {
-                Stock.Text = "Undefined";
-            }
-            if (Company.Text == "")
-            {
-                Company.Text = "Undefined";
-            }
-            if (Comment.Text == "")
-            {
-                Comment.Text = "Undefined";
-            }
-            // Again, a huge block of code. Could be optimised in the future with
-            // potentially a for-loop, and non-specific strings.
-            UpdateExcel((Convert.ToInt32(rowCount.Value)), 2, Element.Text);
-            UpdateExcel((Convert.ToInt32(rowCount.Value)), 3, Quantity.Text);
-            UpdateExcel((Convert.ToInt32(rowCount.Value)), 4, Hazcard.Text);
-            UpdateExcel((Convert.ToInt32(rowCount.Value)), 5, Location.Text);
-            UpdateExcel((Convert.ToInt32(rowCount.Value)), 6, boughtIn.Text);
-            UpdateExcel((Convert.ToInt32(rowCount.Value)), 7, usedBy.Text);
-            UpdateExcel((Convert.ToInt32(rowCount.Value)), 8, Stock.Text);
-            UpdateExcel((Convert.ToInt32(rowCount.Value)), 9, Company.Text);
-            UpdateExcel((Convert.ToInt32(rowCount.Value)), 10, Comment.Text);
             MessageBox.Show("Done!");
         }
         public void Button2_Click(object sender, EventArgs e)
@@ -106,7 +81,7 @@ namespace storeLogger
             excelDocument = openFileDialog1.FileName;
             label1.Text = "Current document open: " + excelDocument;
             // Logic is used to fix a bug where the Excel document would still
-            // try to be used, but caused a COM exception at runtime.
+            // try to be used, but caused a COM exception at runtime (0.0.12-alpha)
             if (excelDocument == null)
             {
                 MessageBox.Show("Please choose a vaild .XLSX file!");
@@ -124,17 +99,17 @@ namespace storeLogger
         }
         private void RowCount_ValueChanged(object sender, EventArgs e)
         {
+            QueryData();
+        }
+        public void QueryData()
+        {
             // Heavily unoptimised code, takes a while to load up.
             // As you change the row count, the text boxes auto fill with cell information.
-            Element.Text = DataString((Convert.ToInt32(rowCount.Value)), 2);
-            Quantity.Text = DataString((Convert.ToInt32(rowCount.Value)), 3);
-            Hazcard.Text = DataString((Convert.ToInt32(rowCount.Value)), 4);
-            Location.Text = DataString((Convert.ToInt32(rowCount.Value)), 5);
-            boughtIn.Text = DataString((Convert.ToInt32(rowCount.Value)), 6);
-            usedBy.Text = DataString((Convert.ToInt32(rowCount.Value)), 7);
-            Stock.Text = DataString((Convert.ToInt32(rowCount.Value)), 8);
-            Company.Text = DataString((Convert.ToInt32(rowCount.Value)), 9);
-            Comment.Text = DataString((Convert.ToInt32(rowCount.Value)), 10);
+            string[] boxArr = new string[9] { s1.Text, s2.Text, s3.Text, s4.Text, s5.Text, s6.Text, s7.Text, s8.Text, s9.Text };
+            for(int i = 0; i < 9; i++)
+            {
+                boxArr[i] = DataString((Convert.ToInt32(rowCount.Value)), (i + 1));
+            }
         }
         public string DataString(int row, int col)
         {
@@ -142,28 +117,25 @@ namespace storeLogger
             // However, as this simply hands the instructions off, Excel is extremely
             // slow reading and sending data and causes a bottleneck. Looking for a better
             // solution.
-            Excel.Application oXL = null;
+            Excel.Application oXL = new Excel.Application();
             Excel._Workbook oWB = null;
-            Excel._Worksheet oSheet = null;
-            string data = null;
+            string data = "";
             try
             {
                 // Why in 0.0.12, I forgot to encase this in a try/catch, is beyond me.
-                oXL = new Excel.Application();
                 oWB = oXL.Workbooks.Open(excelDocument);
-                oSheet = String.IsNullOrEmpty(dropDown.Text) ? (Excel._Worksheet)oWB.ActiveSheet : (Excel._Worksheet)oWB.Worksheets[dropDown.Text];
+                Excel._Worksheet oSheet = String.IsNullOrEmpty(dropDown.Text) ? (Excel._Worksheet)oWB.ActiveSheet : (Excel._Worksheet)oWB.Worksheets[dropDown.Text];
                 data = oSheet.Cells[row, col].Value.ToString();
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(ex);
-                MessageBox.Show("Please open a valid .xlsx document!");
             }
             finally
             {
-                if (oWB != null)
+                if(oWB != null)
                 {
-                    oWB.Close(); // Close down document, to avoid deadlock or R/W issues.
+                    oWB.Close();
                 }
             }
             return data; // Return the data inside the cell.
@@ -250,6 +222,16 @@ namespace storeLogger
             // so the min-max value in RowMinMax can be determined.
             rowCount.Maximum = RowMinMax();
             rowCount.Minimum = 1;
+            QueryData(); // Changed in 0.2.0-beta to fix a bug.
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            TextBox newText = new TextBox();
+            newText.Location = new Point(63, (s9.Top + 26));
+            Form1 Form1 = new Form1();
+            Form1.Controls.Add(newText);
+            Form1.Refresh();
         }
     }
 }

@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             this.submitButton = new System.Windows.Forms.Button();
-            this.Element = new System.Windows.Forms.TextBox();
-            this.label = new System.Windows.Forms.Label();
-            this.wwd = new System.Windows.Forms.Label();
-            this.Quantity = new System.Windows.Forms.TextBox();
-            this.wdwd = new System.Windows.Forms.Label();
-            this.Hazcard = new System.Windows.Forms.TextBox();
-            this.ww = new System.Windows.Forms.Label();
-            this.Location = new System.Windows.Forms.TextBox();
-            this.mn = new System.Windows.Forms.Label();
-            this.boughtIn = new System.Windows.Forms.TextBox();
-            this.dwd = new System.Windows.Forms.Label();
-            this.usedBy = new System.Windows.Forms.TextBox();
-            this.wdddd = new System.Windows.Forms.Label();
-            this.Stock = new System.Windows.Forms.TextBox();
-            this.aa = new System.Windows.Forms.Label();
-            this.Company = new System.Windows.Forms.TextBox();
-            this.v = new System.Windows.Forms.Label();
-            this.Comment = new System.Windows.Forms.TextBox();
+            this.s1 = new System.Windows.Forms.TextBox();
+            this.cellALabel = new System.Windows.Forms.Label();
+            this.cellBLabel = new System.Windows.Forms.Label();
+            this.s2 = new System.Windows.Forms.TextBox();
+            this.cellCLabel = new System.Windows.Forms.Label();
+            this.s3 = new System.Windows.Forms.TextBox();
+            this.cellDLabel = new System.Windows.Forms.Label();
+            this.s4 = new System.Windows.Forms.TextBox();
+            this.cellELabel = new System.Windows.Forms.Label();
+            this.s5 = new System.Windows.Forms.TextBox();
+            this.cellFLabel = new System.Windows.Forms.Label();
+            this.s6 = new System.Windows.Forms.TextBox();
+            this.cellGLabel = new System.Windows.Forms.Label();
+            this.s7 = new System.Windows.Forms.TextBox();
+            this.cellHLabel = new System.Windows.Forms.Label();
+            this.s8 = new System.Windows.Forms.TextBox();
+            this.CellILabel = new System.Windows.Forms.Label();
+            this.s9 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.rowCount = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
@@ -54,204 +54,209 @@
             this.openButton = new System.Windows.Forms.Button();
             this.dropDown = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.rowCount)).BeginInit();
             this.SuspendLayout();
             // 
             // submitButton
             // 
-            this.submitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.submitButton.Location = new System.Drawing.Point(401, 281);
+            this.submitButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.submitButton.Location = new System.Drawing.Point(403, 170);
             this.submitButton.Name = "submitButton";
-            this.submitButton.Size = new System.Drawing.Size(122, 23);
+            this.submitButton.Size = new System.Drawing.Size(133, 20);
             this.submitButton.TabIndex = 0;
             this.submitButton.Text = "Submit Changes";
             this.submitButton.UseVisualStyleBackColor = true;
             this.submitButton.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // Element
+            // s1
             // 
-            this.Element.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.s1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Element.Location = new System.Drawing.Point(63, 14);
-            this.Element.Name = "Element";
-            this.Element.Size = new System.Drawing.Size(321, 20);
-            this.Element.TabIndex = 1;
+            this.s1.Location = new System.Drawing.Point(63, 14);
+            this.s1.Name = "s1";
+            this.s1.Size = new System.Drawing.Size(334, 20);
+            this.s1.TabIndex = 1;
             // 
-            // label
+            // cellALabel
             // 
-            this.label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cellALabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label.AutoSize = true;
-            this.label.Location = new System.Drawing.Point(12, 17);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(45, 13);
-            this.label.TabIndex = 2;
-            this.label.Text = "Element";
+            this.cellALabel.AutoSize = true;
+            this.cellALabel.Location = new System.Drawing.Point(23, 17);
+            this.cellALabel.Name = "cellALabel";
+            this.cellALabel.Size = new System.Drawing.Size(34, 13);
+            this.cellALabel.TabIndex = 2;
+            this.cellALabel.Text = "Cell A";
             // 
-            // wwd
+            // cellBLabel
             // 
-            this.wwd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cellBLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.wwd.AutoSize = true;
-            this.wwd.Location = new System.Drawing.Point(11, 43);
-            this.wwd.Name = "wwd";
-            this.wwd.Size = new System.Drawing.Size(46, 13);
-            this.wwd.TabIndex = 3;
-            this.wwd.Text = "Quantity";
+            this.cellBLabel.AutoSize = true;
+            this.cellBLabel.Location = new System.Drawing.Point(23, 43);
+            this.cellBLabel.Name = "cellBLabel";
+            this.cellBLabel.Size = new System.Drawing.Size(34, 13);
+            this.cellBLabel.TabIndex = 3;
+            this.cellBLabel.Text = "Cell B";
             // 
-            // Quantity
+            // s2
             // 
-            this.Quantity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.s2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Quantity.Location = new System.Drawing.Point(63, 40);
-            this.Quantity.Name = "Quantity";
-            this.Quantity.Size = new System.Drawing.Size(321, 20);
-            this.Quantity.TabIndex = 4;
+            this.s2.Location = new System.Drawing.Point(63, 40);
+            this.s2.Name = "s2";
+            this.s2.Size = new System.Drawing.Size(334, 20);
+            this.s2.TabIndex = 4;
             // 
-            // wdwd
+            // cellCLabel
             // 
-            this.wdwd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cellCLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.wdwd.AutoSize = true;
-            this.wdwd.Location = new System.Drawing.Point(10, 69);
-            this.wdwd.Name = "wdwd";
-            this.wdwd.Size = new System.Drawing.Size(47, 13);
-            this.wdwd.TabIndex = 5;
-            this.wdwd.Text = "Hazcard";
+            this.cellCLabel.AutoSize = true;
+            this.cellCLabel.Location = new System.Drawing.Point(23, 72);
+            this.cellCLabel.Name = "cellCLabel";
+            this.cellCLabel.Size = new System.Drawing.Size(34, 13);
+            this.cellCLabel.TabIndex = 5;
+            this.cellCLabel.Text = "Cell C";
             // 
-            // Hazcard
+            // s3
             // 
-            this.Hazcard.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.s3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Hazcard.Location = new System.Drawing.Point(63, 66);
-            this.Hazcard.Name = "Hazcard";
-            this.Hazcard.Size = new System.Drawing.Size(321, 20);
-            this.Hazcard.TabIndex = 6;
+            this.s3.Location = new System.Drawing.Point(63, 66);
+            this.s3.Name = "s3";
+            this.s3.Size = new System.Drawing.Size(334, 20);
+            this.s3.TabIndex = 6;
             // 
-            // ww
+            // cellDLabel
             // 
-            this.ww.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cellDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ww.AutoSize = true;
-            this.ww.Location = new System.Drawing.Point(9, 95);
-            this.ww.Name = "ww";
-            this.ww.Size = new System.Drawing.Size(48, 13);
-            this.ww.TabIndex = 7;
-            this.ww.Text = "Location";
+            this.cellDLabel.AutoSize = true;
+            this.cellDLabel.Location = new System.Drawing.Point(22, 97);
+            this.cellDLabel.Name = "cellDLabel";
+            this.cellDLabel.Size = new System.Drawing.Size(35, 13);
+            this.cellDLabel.TabIndex = 7;
+            this.cellDLabel.Text = "Cell D";
             // 
-            // Location
+            // s4
             // 
-            this.Location.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.s4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Location.Location = new System.Drawing.Point(63, 92);
-            this.Location.Name = "Location";
-            this.Location.Size = new System.Drawing.Size(321, 20);
-            this.Location.TabIndex = 8;
+            this.s4.Location = new System.Drawing.Point(63, 92);
+            this.s4.Name = "s4";
+            this.s4.Size = new System.Drawing.Size(334, 20);
+            this.s4.TabIndex = 8;
             // 
-            // mn
+            // cellELabel
             // 
-            this.mn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cellELabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.mn.AutoSize = true;
-            this.mn.Location = new System.Drawing.Point(5, 121);
-            this.mn.Name = "mn";
-            this.mn.Size = new System.Drawing.Size(52, 13);
-            this.mn.TabIndex = 9;
-            this.mn.Text = "Bought in";
+            this.cellELabel.AutoSize = true;
+            this.cellELabel.Location = new System.Drawing.Point(23, 121);
+            this.cellELabel.Name = "cellELabel";
+            this.cellELabel.Size = new System.Drawing.Size(34, 13);
+            this.cellELabel.TabIndex = 9;
+            this.cellELabel.Text = "Cell E";
             // 
-            // boughtIn
+            // s5
             // 
-            this.boughtIn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.s5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.boughtIn.Location = new System.Drawing.Point(63, 118);
-            this.boughtIn.Name = "boughtIn";
-            this.boughtIn.Size = new System.Drawing.Size(321, 20);
-            this.boughtIn.TabIndex = 10;
+            this.s5.Location = new System.Drawing.Point(63, 118);
+            this.s5.Name = "s5";
+            this.s5.Size = new System.Drawing.Size(334, 20);
+            this.s5.TabIndex = 10;
             // 
-            // dwd
+            // cellFLabel
             // 
-            this.dwd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cellFLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dwd.AutoSize = true;
-            this.dwd.Location = new System.Drawing.Point(11, 147);
-            this.dwd.Name = "dwd";
-            this.dwd.Size = new System.Drawing.Size(46, 13);
-            this.dwd.TabIndex = 11;
-            this.dwd.Text = "Used by";
+            this.cellFLabel.AutoSize = true;
+            this.cellFLabel.Location = new System.Drawing.Point(24, 147);
+            this.cellFLabel.Name = "cellFLabel";
+            this.cellFLabel.Size = new System.Drawing.Size(33, 13);
+            this.cellFLabel.TabIndex = 11;
+            this.cellFLabel.Text = "Cell F";
             // 
-            // usedBy
+            // s6
             // 
-            this.usedBy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.s6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.usedBy.Location = new System.Drawing.Point(63, 144);
-            this.usedBy.Name = "usedBy";
-            this.usedBy.Size = new System.Drawing.Size(321, 20);
-            this.usedBy.TabIndex = 12;
+            this.s6.Location = new System.Drawing.Point(63, 144);
+            this.s6.Name = "s6";
+            this.s6.Size = new System.Drawing.Size(334, 20);
+            this.s6.TabIndex = 12;
             // 
-            // wdddd
+            // cellGLabel
             // 
-            this.wdddd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cellGLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.wdddd.AutoSize = true;
-            this.wdddd.Location = new System.Drawing.Point(22, 173);
-            this.wdddd.Name = "wdddd";
-            this.wdddd.Size = new System.Drawing.Size(35, 13);
-            this.wdddd.TabIndex = 13;
-            this.wdddd.Text = "Stock";
+            this.cellGLabel.AutoSize = true;
+            this.cellGLabel.Location = new System.Drawing.Point(22, 173);
+            this.cellGLabel.Name = "cellGLabel";
+            this.cellGLabel.Size = new System.Drawing.Size(35, 13);
+            this.cellGLabel.TabIndex = 13;
+            this.cellGLabel.Text = "Cell G";
             // 
-            // Stock
+            // s7
             // 
-            this.Stock.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.s7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Stock.Location = new System.Drawing.Point(63, 170);
-            this.Stock.Name = "Stock";
-            this.Stock.Size = new System.Drawing.Size(321, 20);
-            this.Stock.TabIndex = 14;
+            this.s7.Location = new System.Drawing.Point(63, 196);
+            this.s7.Name = "s7";
+            this.s7.Size = new System.Drawing.Size(334, 20);
+            this.s7.TabIndex = 14;
             // 
-            // aa
+            // cellHLabel
             // 
-            this.aa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cellHLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.aa.AutoSize = true;
-            this.aa.Location = new System.Drawing.Point(6, 199);
-            this.aa.Name = "aa";
-            this.aa.Size = new System.Drawing.Size(51, 13);
-            this.aa.TabIndex = 15;
-            this.aa.Text = "Company";
+            this.cellHLabel.AutoSize = true;
+            this.cellHLabel.Location = new System.Drawing.Point(22, 199);
+            this.cellHLabel.Name = "cellHLabel";
+            this.cellHLabel.Size = new System.Drawing.Size(35, 13);
+            this.cellHLabel.TabIndex = 15;
+            this.cellHLabel.Text = "Cell H";
             // 
-            // Company
+            // s8
             // 
-            this.Company.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.s8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Company.Location = new System.Drawing.Point(63, 196);
-            this.Company.Name = "Company";
-            this.Company.Size = new System.Drawing.Size(321, 20);
-            this.Company.TabIndex = 16;
+            this.s8.Location = new System.Drawing.Point(63, 170);
+            this.s8.Name = "s8";
+            this.s8.Size = new System.Drawing.Size(334, 20);
+            this.s8.TabIndex = 16;
             // 
-            // v
+            // CellILabel
             // 
-            this.v.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.CellILabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.v.AutoSize = true;
-            this.v.Location = new System.Drawing.Point(6, 225);
-            this.v.Name = "v";
-            this.v.Size = new System.Drawing.Size(51, 13);
-            this.v.TabIndex = 17;
-            this.v.Text = "Extra info";
+            this.CellILabel.AutoSize = true;
+            this.CellILabel.Location = new System.Drawing.Point(27, 225);
+            this.CellILabel.Name = "CellILabel";
+            this.CellILabel.Size = new System.Drawing.Size(30, 13);
+            this.CellILabel.TabIndex = 17;
+            this.CellILabel.Text = "Cell I";
             // 
-            // Comment
+            // s9
             // 
-            this.Comment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.s9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Comment.Location = new System.Drawing.Point(63, 222);
-            this.Comment.Name = "Comment";
-            this.Comment.Size = new System.Drawing.Size(321, 20);
-            this.Comment.TabIndex = 18;
+            this.s9.Location = new System.Drawing.Point(63, 222);
+            this.s9.Name = "s9";
+            this.s9.Size = new System.Drawing.Size(334, 20);
+            this.s9.TabIndex = 18;
             // 
             // label10
             // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(399, 17);
+            this.label10.Location = new System.Drawing.Point(412, 17);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(29, 13);
             this.label10.TabIndex = 19;
@@ -259,8 +264,9 @@
             // 
             // rowCount
             // 
-            this.rowCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.rowCount.Location = new System.Drawing.Point(434, 15);
+            this.rowCount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rowCount.Location = new System.Drawing.Point(447, 15);
             this.rowCount.Maximum = new decimal(new int[] {
             20000,
             0,
@@ -283,8 +289,10 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(63, 249);
+            this.label1.Location = new System.Drawing.Point(12, 291);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(121, 13);
             this.label1.TabIndex = 21;
@@ -297,18 +305,22 @@
             // 
             // openButton
             // 
-            this.openButton.Location = new System.Drawing.Point(273, 281);
+            this.openButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.openButton.Location = new System.Drawing.Point(403, 144);
             this.openButton.Name = "openButton";
-            this.openButton.Size = new System.Drawing.Size(122, 23);
+            this.openButton.Size = new System.Drawing.Size(133, 20);
             this.openButton.TabIndex = 22;
-            this.openButton.Text = "Open Excel XML";
+            this.openButton.Text = "Open Excel Sheet (.xlsx)";
             this.openButton.UseVisualStyleBackColor = true;
             this.openButton.Click += new System.EventHandler(this.Button2_Click);
             // 
             // dropDown
             // 
+            this.dropDown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dropDown.FormattingEnabled = true;
-            this.dropDown.Location = new System.Drawing.Point(401, 69);
+            this.dropDown.Location = new System.Drawing.Point(414, 69);
             this.dropDown.Name = "dropDown";
             this.dropDown.Size = new System.Drawing.Size(121, 21);
             this.dropDown.TabIndex = 25;
@@ -316,43 +328,71 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(398, 38);
+            this.label2.Location = new System.Drawing.Point(411, 38);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 26);
             this.label2.TabIndex = 26;
             this.label2.Text = "Select sheet that\r\nyou would like to edit.\r\n";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(414, 96);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(89, 17);
+            this.checkBox1.TabIndex = 27;
+            this.checkBox1.Text = "Auto-fill blank";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(403, 119);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(132, 20);
+            this.button1.TabIndex = 28;
+            this.button1.Text = "Add cell";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(535, 313);
+            this.ClientSize = new System.Drawing.Size(548, 313);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dropDown);
-            this.Controls.Add(this.openButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.rowCount);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.Comment);
-            this.Controls.Add(this.v);
-            this.Controls.Add(this.Company);
-            this.Controls.Add(this.aa);
-            this.Controls.Add(this.Stock);
-            this.Controls.Add(this.wdddd);
-            this.Controls.Add(this.usedBy);
-            this.Controls.Add(this.dwd);
-            this.Controls.Add(this.boughtIn);
-            this.Controls.Add(this.mn);
-            this.Controls.Add(this.Location);
-            this.Controls.Add(this.ww);
-            this.Controls.Add(this.Hazcard);
-            this.Controls.Add(this.wdwd);
-            this.Controls.Add(this.Quantity);
-            this.Controls.Add(this.wwd);
-            this.Controls.Add(this.label);
-            this.Controls.Add(this.Element);
+            this.Controls.Add(this.s9);
+            this.Controls.Add(this.CellILabel);
+            this.Controls.Add(this.s8);
+            this.Controls.Add(this.cellHLabel);
+            this.Controls.Add(this.s7);
+            this.Controls.Add(this.cellGLabel);
+            this.Controls.Add(this.s6);
+            this.Controls.Add(this.cellFLabel);
+            this.Controls.Add(this.s5);
+            this.Controls.Add(this.cellELabel);
+            this.Controls.Add(this.s4);
+            this.Controls.Add(this.cellDLabel);
+            this.Controls.Add(this.s3);
+            this.Controls.Add(this.cellCLabel);
+            this.Controls.Add(this.s2);
+            this.Controls.Add(this.cellBLabel);
+            this.Controls.Add(this.cellALabel);
+            this.Controls.Add(this.s1);
             this.Controls.Add(this.submitButton);
+            this.Controls.Add(this.openButton);
             this.Name = "Form1";
             this.Text = "Excel Filler";
             ((System.ComponentModel.ISupportInitialize)(this.rowCount)).EndInit();
@@ -364,24 +404,23 @@
         #endregion
 
         private System.Windows.Forms.Button submitButton;
-        private System.Windows.Forms.TextBox Element;
-        private System.Windows.Forms.Label label;
-        private System.Windows.Forms.Label wwd;
-        private System.Windows.Forms.TextBox Quantity;
-        private System.Windows.Forms.Label wdwd;
-        private System.Windows.Forms.TextBox Hazcard;
-        private System.Windows.Forms.Label ww;
-        private System.Windows.Forms.TextBox Location;
-        private System.Windows.Forms.Label mn;
-        private System.Windows.Forms.TextBox boughtIn;
-        private System.Windows.Forms.Label dwd;
-        private System.Windows.Forms.TextBox usedBy;
-        private System.Windows.Forms.Label wdddd;
-        private System.Windows.Forms.TextBox Stock;
-        private System.Windows.Forms.Label aa;
-        private System.Windows.Forms.TextBox Company;
-        private System.Windows.Forms.Label v;
-        private System.Windows.Forms.TextBox Comment;
+        private System.Windows.Forms.TextBox s1;
+        private System.Windows.Forms.Label cellALabel;
+        private System.Windows.Forms.Label cellBLabel;
+        private System.Windows.Forms.TextBox s2;
+        private System.Windows.Forms.Label cellCLabel;
+        private System.Windows.Forms.TextBox s3;
+        private System.Windows.Forms.Label cellDLabel;
+        private new System.Windows.Forms.TextBox s4;
+        private System.Windows.Forms.Label cellELabel;
+        private System.Windows.Forms.TextBox s5;
+        private System.Windows.Forms.Label cellFLabel;
+        private System.Windows.Forms.TextBox s6;
+        private System.Windows.Forms.TextBox s7;
+        private System.Windows.Forms.Label cellHLabel;
+        private System.Windows.Forms.TextBox s8;
+        private System.Windows.Forms.Label CellILabel;
+        private System.Windows.Forms.TextBox s9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.NumericUpDown rowCount;
         private System.Windows.Forms.Label label1;
@@ -389,6 +428,9 @@
         private System.Windows.Forms.Button openButton;
         private System.Windows.Forms.ComboBox dropDown;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label cellGLabel;
+        private System.Windows.Forms.Button button1;
     }
 }
 

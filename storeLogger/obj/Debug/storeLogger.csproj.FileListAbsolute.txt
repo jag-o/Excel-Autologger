@@ -12,3 +12,14 @@ C:\Users\punters\source\repos\storeLogger\storeLogger\obj\Debug\storeLogger.cspr
 C:\Users\punters\source\repos\storeLogger\storeLogger\obj\Debug\storeLogger.csproj.CopyComplete
 C:\Users\punters\source\repos\storeLogger\storeLogger\obj\Debug\storeLogger.exe
 C:\Users\punters\source\repos\storeLogger\storeLogger\obj\Debug\storeLogger.pdb
+C:\Users\jg5727\Source\Repos\Excel-Autologger\storeLogger\bin\Debug\storeLogger.exe.config
+C:\Users\jg5727\Source\Repos\Excel-Autologger\storeLogger\obj\Debug\storeLogger.csproj.ResolveComReference.cache
+C:\Users\jg5727\Source\Repos\Excel-Autologger\storeLogger\obj\Debug\storeLogger.exe
+C:\Users\jg5727\Source\Repos\Excel-Autologger\storeLogger\obj\Debug\storeLogger.pdb
+C:\Users\jg5727\Source\Repos\Excel-Autologger\storeLogger\bin\Debug\storeLogger.exe
+C:\Users\jg5727\Source\Repos\Excel-Autologger\storeLogger\bin\Debug\storeLogger.pdb
+C:\Users\jg5727\Source\Repos\Excel-Autologger\storeLogger\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\jg5727\Source\Repos\Excel-Autologger\storeLogger\obj\Debug\storeLogger.csprojResolveAssemblyReference.cache
+C:\Users\jg5727\Source\Repos\Excel-Autologger\storeLogger\obj\Debug\storeLogger.Form1.resources
+C:\Users\jg5727\Source\Repos\Excel-Autologger\storeLogger\obj\Debug\storeLogger.Properties.Resources.resources
+C:\Users\jg5727\Source\Repos\Excel-Autologger\storeLogger\obj\Debug\storeLogger.csproj.GenerateResource.Cache
