@@ -233,5 +233,10 @@ namespace storeLogger
             Form1.Controls.Add(newText);
             Form1.Refresh();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

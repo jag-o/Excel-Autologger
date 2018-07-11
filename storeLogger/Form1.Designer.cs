@@ -395,6 +395,7 @@
             this.Controls.Add(this.openButton);
             this.Name = "Form1";
             this.Text = "Excel Filler";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.rowCount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
